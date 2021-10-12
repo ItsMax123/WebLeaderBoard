@@ -35,8 +35,8 @@ class Main extends PluginBase{
     }
 
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
-	    if ($command->getName() == "leaderboard") {
-			$sender->sendMessage("§aHead over to §bshorturl.at/ouLOS§a and search for '§c". $this->config->get("server-name") ."§a' in the search bar or go to §bhttp://webleaderboard.pythonanywhere.com/server/".explode('.', $this->secret->get("secret_token"))[0]."/stats/players");
+	    if ($command->getName() == "webleaderboard") {
+			$sender->sendMessage("§aHead over to §bbit.ly/2YMxJWb§a and search for '§c". $this->config->get("server-name") ."§a' in the search bar or go to §bhttp://webleaderboard.pythonanywhere.com/server/".explode('.', $this->secret->get("secret_token"))[0]."/stats/players");
 		}
 	    return true;
 	}
