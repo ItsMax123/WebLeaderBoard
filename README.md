@@ -66,12 +66,10 @@ declare(strict_types=1);
 
 namespace Max\WebRedSkyBlock;
 
-use pocketmine\plugin\PluginBase;
+use pocketmine\plugin\{Plugin, PluginBase};
 use pocketmine\event\Listener;
 use pocketmine\Server;
-use pocketmine\plugin\Plugin;
 
-use pocketmine\event\PlayerJoinEvent;
 use Max\WebLeaderBoard\{RequestPagesEvent, SendDataEvent};
 
 class Main extends PluginBase{
