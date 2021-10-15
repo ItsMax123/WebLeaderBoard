@@ -1,0 +1,11 @@
+{
+	"page_name": "Combat",
+	"page_title": "Player Combat Stats",
+	"icon_url": "https:\/\/library.kissclipart.com\/20180831\/oce\/kissclipart-crossed-swords-png-clipart-sword-clip-art-01979e13d09a42a6.png",
+	"default_layout": {
+		"Kills": "0",
+		"Deaths": "0",
+		"Killstreak": "0"
+	},
+	"Players": []
+}

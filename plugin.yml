@@ -2,8 +2,8 @@ name: WebLeaderBoard
 description: "A leaderboard plugin that shows player statistics on a website."
 author: ItsMax123
 
-main: Max\WebLeaderBoard\Main
-version: 1.0.0
+main: Max\WebLeaderBoard\WebLeaderBoard
+version: 2.0.0
 api: 3.0.0
 
 commands:

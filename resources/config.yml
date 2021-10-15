@@ -1,7 +1,16 @@
 ---
-server-name: ""
-server-description: ""
-server-image-link: ""
-server-ip: ""
-server-port: ""
+# Amount of seconds between each data transfer to website
+# (In other words, it's the ammount of seconds between every time the information on the website will be updated):
+# Minimum: 10  (If you want the website to update really fast use this)
+# Maximum: 60  (Use this if you have a laggy server)
+# Recommended: 30
+send_data_interval: 30
+
+# Website information (You can leave empty if you want)
+server-name:
+server-description: "Just another normal server."
+server-image-link: "https://static.wikia.nocookie.net/c9029f50-8210-4352-aece-6230999811a0"
+
+#Put the IP you want players to use to join your server:
+server-ip:
 ...

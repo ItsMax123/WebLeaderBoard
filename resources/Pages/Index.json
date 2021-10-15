@@ -1,0 +1,12 @@
+{
+	"page_name": "Index",
+	"page_title": "Basic Player Stats",
+	"icon_url": "https:\/\/icon-library.com\/images\/user-icon-png-transparent\/user-icon-png-transparent-10.jpg",
+	"default_layout": {
+		"Messages": "0",
+		"Commands": "0",
+		"Blocks Broken": "0",
+		"Blocks Placed": "0"
+	},
+	"Players": []
+}
