@@ -21,7 +21,7 @@ class EventListener implements Listener {
 
 	public function onRequestPages(RequestPagesEvent $event) {
 		$event->setPage(
-			"Index",
+			"Basic",
 			"Basic Player Stats",
 			[
 				"Messages" => "0",
@@ -33,7 +33,7 @@ class EventListener implements Listener {
 		);
 		$event->setPage(
 			"Combat",
-			"Player Combat Stats",
+			"Combat Stats",
 			[
 				"Kills" => "0",
 				"Deaths" => "0",
@@ -65,19 +65,19 @@ class EventListener implements Listener {
 	}
 
 	public function onChat(PlayerChatEvent $event) {
-		$this->plugin->bumpPageStat("Index", $event->getPlayer()->getName(), "Messages", 1);
+		$this->plugin->bumpPageStat("Basic", $event->getPlayer()->getName(), "Messages", 1);
 	}
 
 	public function onCommand(CommandEvent $event) {
     	$playerName = $event->getSender();
-		if ($playerName instanceof Player) $this->plugin->bumpPageStat("Index", $playerName->getName(), "Commands", 1);
+		if ($playerName instanceof Player) $this->plugin->bumpPageStat("Basic", $playerName->getName(), "Commands", 1);
 	}
 
 	public function onBlockBreak(BlockBreakEvent $event) {
-		$this->plugin->bumpPageStat("Index", $event->getPlayer()->getName(), "Blocks Broken", 1);
+		$this->plugin->bumpPageStat("Basic", $event->getPlayer()->getName(), "Blocks Broken", 1);
 	}
 
 	public function onBlockPlace(BlockPlaceEvent $event) {
-		$this->plugin->bumpPageStat("Index", $event->getPlayer()->getName(), "Blocks Placed", 1);
+		$this->plugin->bumpPageStat("Basic", $event->getPlayer()->getName(), "Blocks Placed", 1);
 	}
 }
