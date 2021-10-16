@@ -14,8 +14,8 @@ class GetDataAsync extends AsyncTask {
 	public function onRun() {
 		$curl = curl_init();
 		curl_setopt_array($curl, [
-			#CURLOPT_URL => 'http://webleaderboard.pythonanywhere.com/getData/' . $this->secret_token,
-			CURLOPT_URL => 'http://127.0.0.1:5000/getData/' . $this->secret_token,
+			CURLOPT_URL => 'http://webleaderboard.pythonanywhere.com/getData/' . $this->secret_token,
+			#CURLOPT_URL => 'http://127.0.0.1:5000/getData/' . $this->secret_token,
 			CURLOPT_TIMEOUT_MS => 15000,
 			CURLOPT_RETURNTRANSFER => TRUE
 		]);
