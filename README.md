@@ -20,7 +20,7 @@ If you are a plugin developer and would like to add support for your own stats p
 
 1. The first step is to import these classes (just copy paste this):
 ```php
-use Max\WebLeaderBoard\{RequestPagesEvent, SendDataEvent};
+use Max\WebLeaderBoard\Events\{RequestPagesEvent, SendDataEvent};
 ```
 
 2. You need to create the page. For this you need to supply the required information.<br>
@@ -72,7 +72,7 @@ use pocketmine\Server;
 use pocketmine\plugin\Plugin;
 
 use pocketmine\event\PlayerJoinEvent;
-use Max\WebLeaderBoard\{RequestPagesEvent, SendDataEvent};
+use Max\WebLeaderBoard\Events\{RequestPagesEvent, SendDataEvent};
 
 class Main extends PluginBase{
     public function onEnable() {
