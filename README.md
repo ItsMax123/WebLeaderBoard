@@ -12,7 +12,7 @@ For issues and suggestions, please create an issue on Github. Please provide as 
 
 # FAQ
 **How can I add more stats to my servers page on the website?**<br>
-To add a custom statistics page with statistics from another plugin, you must nicely ask that plugin's developper to support this plugin. They must follow the developpers guide below.
+To add a custom statistics page with statistics from another plugin, you must nicely ask that plugin's developer to add support for this plugin. They must follow the developers guide below.
 
 # Developers
 If you are a plugin developer and would like to add support for your own stats page to the website, please follow this guide.<br>
@@ -102,4 +102,4 @@ class WebLeaderBoardListener implements Listener {
 }
 ```
 
-**Contact me on discord ItsMax123#6798 if you need any help intergrating this into your plugin.**
+**Contact me on discord ItsMax123#6798 if you need any help intergrading this into your plugin.**
