@@ -4,6 +4,8 @@ namespace Max\WebLeaderBoard\Tasks;
 
 use pocketmine\scheduler\AsyncTask;
 
+use Max\WebLeaderBoard\WebLeaderBoard;
+
 class GetDataAsync extends AsyncTask {
 
 	public function __construct(string $secret_token, array $data) {
@@ -26,7 +28,7 @@ class GetDataAsync extends AsyncTask {
 
 	public function onCompletion($server) {
 		$response = $this->getResult();
-		$plugin = $server->getPluginManager()->getPlugin("WebLeaderBoard");
+		$plugin = WebLeaderBoard::getInstance();
 		if ($response != False) {
 			if ($response != "Invalid secret") {
 				$plugin->receivedData(json_decode($response, true));

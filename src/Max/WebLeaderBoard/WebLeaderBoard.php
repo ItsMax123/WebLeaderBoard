@@ -14,11 +14,15 @@ use Max\WebLeaderBoard\Tasks\{GetDataAsync, SendDataTask};
 class WebLeaderBoard extends PluginBase{
     public $data = [], $players = [];
 
+	private static $instance = null;
+
     public function onEnable() {
         $this->saveResource("config.yml");
 		$this->saveResource("secret.yml");
         $this->config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
 		$this->secret = new Config($this->getDataFolder() . "secret.yml", Config::YAML);
+
+		self::$instance = $this;
 
 		#Create secret token if it doesnt already exist
 		if (!isset($this->secret->getAll()["secret_token"])) {
@@ -39,6 +43,14 @@ class WebLeaderBoard extends PluginBase{
 			$sender->sendMessage("§aHead over to §bbit.ly/2YMxJWb§a and search for '§c". $this->getConfigOrDefault("server-name", $this->getServer()->getMotd()) ."§a' in the search bar OR go to §bhttp://webleaderboard.pythonanywhere.com/server/".explode('/', $this->secret->get("secret_token"))[0]);
 		}
 	    return true;
+	}
+
+	public static function getInstance(){
+		return self::$instance;
+	}
+
+	public function onLoad(){
+		self::$instance = $this;
 	}
 
     public function getConfigOrDefault(string $value, string $default): string {
