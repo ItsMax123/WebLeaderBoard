@@ -12,11 +12,36 @@ use pocketmine\event\player\{PlayerJoinEvent, PlayerDeathEvent, PlayerChatEvent}
 use pocketmine\event\entity\{EntityDamageByEntityEvent};
 use pocketmine\event\server\CommandEvent;
 
+use Max\WebLeaderBoard\Events\RequestPagesEvent;
 
 class EventListener implements Listener {
     public function __construct($pl) {
         $this->plugin = $pl;
     }
+
+	public function onRequestPages(RequestPagesEvent $event) {
+		$event->setPage(
+			"Index",
+			"Basic Player Stats",
+			[
+				"Messages" => "0",
+				"Commands" => "0",
+				"Blocks Broken" => "0",
+				"Blocks Placed" => "0"
+			],
+			"https://icon-library.com/images/user-icon-png-transparent/user-icon-png-transparent-10.jpg"
+		);
+		$event->setPage(
+			"Combat",
+			"Player Combat Stats",
+			[
+				"Kills" => "0",
+				"Deaths" => "0",
+				"Killstreak" => "0"
+			],
+			"https://library.kissclipart.com/20180831/oce/kissclipart-crossed-swords-png-clipart-sword-clip-art-01979e13d09a42a6.png"
+		);
+	}
 
 	public function onPlayerDeath(PlayerDeathEvent $event) {
 		$victim = $event->getPlayer();
@@ -28,6 +53,7 @@ class EventListener implements Listener {
 		}
 	}
 
+	#IMPORTANT: This is to set add player's to pages if they dont already exist.
 	public function onJoin(PlayerJoinEvent $event) {
     	$playerName = $event->getPlayer()->getName();
     	foreach ($this->plugin->data["Pages"] as $pageName => $pageData) {
