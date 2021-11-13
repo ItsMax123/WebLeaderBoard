@@ -1,3 +1,5 @@
+# ! **This website I made for this plugin is broken and I do not have the intention on fixing it any time soon. Sorry!**
+
 # WebLeaderBoard
 A Pocketmine-MP (PMMP) leaderboard plugin that shows all sorts of statistics on a website.
 
